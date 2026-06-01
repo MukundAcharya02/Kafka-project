@@ -14,8 +14,8 @@ public class ProductCreatedEventHandler {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @KafkaHandler
-    public void handle(ProductEventCreate productCreateEvent) {
-        System.out.println("********* "+productCreateEvent.getTitle());
-        log.info("Received a new event: {} {} {}" , productCreateEvent.getTitle(),productCreateEvent.getProductId(),productCreateEvent.getPrice());
+    public void handle(ProductEventCreate productEventCreate) {
+        System.out.println("********* "+productEventCreate.getTitle());
+        log.info("Received a new event: {} {} {}" , productEventCreate.getTitle(),productEventCreate.getProductId(),productEventCreate.getPrice());
     }
 }
